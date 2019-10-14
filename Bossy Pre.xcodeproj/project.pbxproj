@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		13584DB2233E68AC00550E12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13584DB1233E68AC00550E12 /* AppDelegate.swift */; };
+		13584DB4233E68AC00550E12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13584DB3233E68AC00550E12 /* SceneDelegate.swift */; };
+		13584DB6233E68AC00550E12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13584DB5233E68AC00550E12 /* ViewController.swift */; };
+		13584DB9233E68AC00550E12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13584DB7233E68AC00550E12 /* Main.storyboard */; };
+		13584DBC233E68AC00550E12 /* BassPreAmp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13584DBA233E68AC00550E12 /* BassPreAmp.xcdatamodeld */; };
+		13584DBE233E68AD00550E12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13584DBD233E68AD00550E12 /* Assets.xcassets */; };
+		13584DC1233E68AD00550E12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13584DBF233E68AD00550E12 /* LaunchScreen.storyboard */; };
+		139C7BA3234E849500B94AFD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 139C7BA2234E849500B94AFD /* AudioToolbox.framework */; };
+		13F7D410233E7DC5009C1A9C /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F7D40F233E7DC5009C1A9C /* AudioKitUI.framework */; };
+		13F7D411233E7DC5009C1A9C /* AudioKitUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13F7D40F233E7DC5009C1A9C /* AudioKitUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95D8367283D6C9A1C830E7BF /* Pods_BossyPre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491839AA59EEFE725538E1C2 /* Pods_BossyPre.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		13F7D412233E7DC5009C1A9C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				13F7D411233E7DC5009C1A9C /* AudioKitUI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		13569B1823513C9300770102 /* BossyPre-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BossyPre-BridgingHeader.h"; sourceTree = "<group>"; };
+		13584DAE233E68AC00550E12 /* BossyPre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BossyPre.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13584DB1233E68AC00550E12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		13584DB3233E68AC00550E12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		13584DB5233E68AC00550E12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		13584DB8233E68AC00550E12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		13584DBB233E68AC00550E12 /* BassPreAmp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BassPreAmp.xcdatamodel; sourceTree = "<group>"; };
+		13584DBD233E68AD00550E12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		13584DC0233E68AD00550E12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		13584DC2233E68AD00550E12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		139C7BA1234E849400B94AFD /* BassPreAmp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BassPreAmp.entitlements; sourceTree = "<group>"; };
+		139C7BA2234E849500B94AFD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		13F7D40F233E7DC5009C1A9C /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKitUI.framework; path = Pods/AudioKit/iOS/AudioKitUI.framework; sourceTree = "<group>"; };
+		1AC584EA325323F68497F67D /* Pods-BossyPre.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BossyPre.release.xcconfig"; path = "Target Support Files/Pods-BossyPre/Pods-BossyPre.release.xcconfig"; sourceTree = "<group>"; };
+		3383CED8592EE03E6E9A693F /* Pods-BassPreAmp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BassPreAmp.release.xcconfig"; path = "Target Support Files/Pods-BassPreAmp/Pods-BassPreAmp.release.xcconfig"; sourceTree = "<group>"; };
+		491839AA59EEFE725538E1C2 /* Pods_BossyPre.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BossyPre.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1D7E690154A1C519D78E11C /* Pods-BassPreAmp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BassPreAmp.debug.xcconfig"; path = "Target Support Files/Pods-BassPreAmp/Pods-BassPreAmp.debug.xcconfig"; sourceTree = "<group>"; };
+		F3253F18C74A492CCAD4A49B /* Pods-BossyPre.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BossyPre.debug.xcconfig"; path = "Target Support Files/Pods-BossyPre/Pods-BossyPre.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		13584DAB233E68AC00550E12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13F7D410233E7DC5009C1A9C /* AudioKitUI.framework in Frameworks */,
+				139C7BA3234E849500B94AFD /* AudioToolbox.framework in Frameworks */,
+				95D8367283D6C9A1C830E7BF /* Pods_BossyPre.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13584DA5233E68AC00550E12 = {
+			isa = PBXGroup;
+			children = (
+				13584DB0233E68AC00550E12 /* BassPreAmp */,
+				13584DAF233E68AC00550E12 /* Products */,
+				3C6A150FC73E10170079F594 /* Pods */,
+				5E552BC518DB0E02D9BC96EC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		13584DAF233E68AC00550E12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13584DAE233E68AC00550E12 /* BossyPre.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		13584DB0233E68AC00550E12 /* BassPreAmp */ = {
+			isa = PBXGroup;
+			children = (
+				139C7BA1234E849400B94AFD /* BassPreAmp.entitlements */,
+				13584DB1233E68AC00550E12 /* AppDelegate.swift */,
+				13584DB3233E68AC00550E12 /* SceneDelegate.swift */,
+				13584DB5233E68AC00550E12 /* ViewController.swift */,
+				13584DB7233E68AC00550E12 /* Main.storyboard */,
+				13584DBD233E68AD00550E12 /* Assets.xcassets */,
+				13584DBF233E68AD00550E12 /* LaunchScreen.storyboard */,
+				13584DC2233E68AD00550E12 /* Info.plist */,
+				13584DBA233E68AC00550E12 /* BassPreAmp.xcdatamodeld */,
+				13569B1823513C9300770102 /* BossyPre-BridgingHeader.h */,
+			);
+			path = BassPreAmp;
+			sourceTree = "<group>";
+		};
+		3C6A150FC73E10170079F594 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B1D7E690154A1C519D78E11C /* Pods-BassPreAmp.debug.xcconfig */,
+				3383CED8592EE03E6E9A693F /* Pods-BassPreAmp.release.xcconfig */,
+				F3253F18C74A492CCAD4A49B /* Pods-BossyPre.debug.xcconfig */,
+				1AC584EA325323F68497F67D /* Pods-BossyPre.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5E552BC518DB0E02D9BC96EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				139C7BA2234E849500B94AFD /* AudioToolbox.framework */,
+				13F7D40F233E7DC5009C1A9C /* AudioKitUI.framework */,
+				491839AA59EEFE725538E1C2 /* Pods_BossyPre.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		13584DAD233E68AC00550E12 /* BossyPre */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13584DC5233E68AD00550E12 /* Build configuration list for PBXNativeTarget "BossyPre" */;
+			buildPhases = (
+				59F58C4F7685CD2DED6B4669 /* [CP] Check Pods Manifest.lock */,
+				13584DAA233E68AC00550E12 /* Sources */,
+				13584DAB233E68AC00550E12 /* Frameworks */,
+				13584DAC233E68AC00550E12 /* Resources */,
+				13F7D412233E7DC5009C1A9C /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BossyPre;
+			productName = BassPreAmp;
+			productReference = 13584DAE233E68AC00550E12 /* BossyPre.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		13584DA6233E68AC00550E12 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Jair-Rohm Wells";
+				TargetAttributes = {
+					13584DAD233E68AC00550E12 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = 13584DA9233E68AC00550E12 /* Build configuration list for PBXProject "Bossy Pre" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 13584DA5233E68AC00550E12;
+			productRefGroup = 13584DAF233E68AC00550E12 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13584DAD233E68AC00550E12 /* BossyPre */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		13584DAC233E68AC00550E12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13584DC1233E68AD00550E12 /* LaunchScreen.storyboard in Resources */,
+				13584DBE233E68AD00550E12 /* Assets.xcassets in Resources */,
+				13584DB9233E68AC00550E12 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		59F58C4F7685CD2DED6B4669 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BossyPre-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		13584DAA233E68AC00550E12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13584DB6233E68AC00550E12 /* ViewController.swift in Sources */,
+				13584DBC233E68AC00550E12 /* BassPreAmp.xcdatamodeld in Sources */,
+				13584DB2233E68AC00550E12 /* AppDelegate.swift in Sources */,
+				13584DB4233E68AC00550E12 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		13584DB7233E68AC00550E12 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13584DB8233E68AC00550E12 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		13584DBF233E68AD00550E12 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13584DC0233E68AD00550E12 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		13584DC3233E68AD00550E12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		13584DC4233E68AD00550E12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		13584DC6233E68AD00550E12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3253F18C74A492CCAD4A49B /* Pods-BossyPre.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BassPreAmp/BassPreAmp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LJ45VYMT6A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/AudioKit/iOS",
+				);
+				INFOPLIST_FILE = BassPreAmp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.glathocom.BossyPre;
+				PRODUCT_NAME = BossyPre;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jairrohmwells/Desktop/Swift Work/BossyPre/BassPreAmp/BossyPre-BridgingHeader.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		13584DC7233E68AD00550E12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AC584EA325323F68497F67D /* Pods-BossyPre.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BassPreAmp/BassPreAmp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LJ45VYMT6A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/AudioKit/iOS",
+				);
+				INFOPLIST_FILE = BassPreAmp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.glathocom.BossyPre;
+				PRODUCT_NAME = BossyPre;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jairrohmwells/Desktop/Swift Work/BossyPre/BassPreAmp/BossyPre-BridgingHeader.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13584DA9233E68AC00550E12 /* Build configuration list for PBXProject "Bossy Pre" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13584DC3233E68AD00550E12 /* Debug */,
+				13584DC4233E68AD00550E12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13584DC5233E68AD00550E12 /* Build configuration list for PBXNativeTarget "BossyPre" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13584DC6233E68AD00550E12 /* Debug */,
+				13584DC7233E68AD00550E12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		13584DBA233E68AC00550E12 /* BassPreAmp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				13584DBB233E68AC00550E12 /* BassPreAmp.xcdatamodel */,
+			);
+			currentVersion = 13584DBB233E68AC00550E12 /* BassPreAmp.xcdatamodel */;
+			path = BassPreAmp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 13584DA6233E68AC00550E12 /* Project object */;
+}

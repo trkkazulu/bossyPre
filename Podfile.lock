@@ -1,0 +1,25 @@
+PODS:
+  - Audiobus (3.0.9)
+  - AudioKit (4.9.1):
+    - AudioKit/Core (= 4.9.1)
+    - AudioKit/UI (= 4.9.1)
+  - AudioKit/Core (4.9.1)
+  - AudioKit/UI (4.9.1):
+    - AudioKit/Core
+
+DEPENDENCIES:
+  - Audiobus
+  - AudioKit (~> 4.0)
+
+SPEC REPOS:
+  trunk:
+    - Audiobus
+    - AudioKit
+
+SPEC CHECKSUMS:
+  Audiobus: 5f9554070d36a3c84d87a65da6e88dba6cec127e
+  AudioKit: 6e5a830b92b1fb295d7efb81ad33fcd1e540712b
+
+PODFILE CHECKSUM: 5790e03b76522955e86dd3e25d9cb90eee717c9c
+
+COCOAPODS: 1.8.3
