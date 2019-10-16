@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:FilterEffectsMoogy.xcodeproj">
+      location = "group:/Users/jairrohmwells/Desktop/Swift Work/FilterEffectsMoogy/Filter Effects Moogy.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

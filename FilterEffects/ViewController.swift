@@ -30,32 +30,25 @@ class ViewController: UIViewController {
         
         //MARK: Create the player for testing
         
-//        if let myfile = try? AKAudioFile(readFileName: "bassClipCR.wav") {
-//
-//            player = AKPlayer(audioFile: myfile)
-//
-//             player.completionHandler = { Swift.print("completion callback has been triggered!") }
-//
-//            player.isLooping = true
-//            player.buffering = .always
-//
-//            player.play()
-//            print("Player started")
-            
+        let myfile = try? AKAudioFile(readFileName: "bassClipCR.wav")
+        
+        player = AKPlayer(audioFile: myfile!)
+        
+        player.isLooping = true
+        
+        player.buffering = .always
+        
+        
+        
+        player.play()
+        print("Player started")
+        
             
             
             //MARK: PROCESSES
             
-            //        delay = AKVariableDelay(input)
-            //        delay.rampDuration = 0.5 // Allows for some cool effects
-            //        delayMixer = AKDryWetMixer(input, delay)
-            //
-            
-            filter = AKMoogLadder(input, cutoffFrequency: 60.0, resonance: 0.5)
+            filter = AKMoogLadder(input, cutoffFrequency: 500.0, resonance: 0.5)
             filterMixer = AKDryWetMixer(input, filter)
-            
-            //        reverb = AKCostelloReverb(delayMixer)
-            //        reverbMixer = AKDryWetMixer(delayMixer, reverb)
             
             dist = AKDistortion(filterMixer, delay: 0.0, decay: 0.0, delayMix: 0.0, decimation: 0.0, rounding: 0.0, decimationMix: 0.0, linearTerm: 1.0, squaredTerm: 1.0, cubicTerm: 1.0, polynomialMix: 1.0, ringModFreq1: 0.0, ringModFreq2: 0.0, ringModBalance: 0.0, ringModMix: 0.0, softClipGain: -3.0, finalMix: 1.0)
             distMixer = AKDryWetMixer(filterMixer, dist)

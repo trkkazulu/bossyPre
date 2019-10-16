@@ -41,10 +41,10 @@
 			<key>CFBundleURLIconFile</key>
 			<string></string>
 			<key>CFBundleURLName</key>
-			<string>io.audiokit.filtereffects</string>
+			<string>io.glathocom.filterEffectsMoogy</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>FilterEffects-1.0.audiobus</string>
+				<string>FilterEffectsMoogy-1.0.audiobus</string>
 			</array>
 		</dict>
 	</array>
@@ -53,7 +53,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Process Input Signal</string>
+	<string>We need to access your microphone, ok?</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>

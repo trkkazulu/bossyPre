@@ -17,7 +17,7 @@
                BlueprintIdentifier = "C4EDA0FD1DA969CF008C1827"
                BuildableName = "Filter Effects Moogy.app"
                BlueprintName = "FilterEffectsMoogy"
-               ReferencedContainer = "container:FilterEffectsMoogy.xcodeproj">
+               ReferencedContainer = "container:Filter Effects Moogy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,7 +47,7 @@
             BlueprintIdentifier = "C4EDA0FD1DA969CF008C1827"
             BuildableName = "Filter Effects Moogy.app"
             BlueprintName = "FilterEffectsMoogy"
-            ReferencedContainer = "container:FilterEffectsMoogy.xcodeproj">
+            ReferencedContainer = "container:Filter Effects Moogy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "C4EDA0FD1DA969CF008C1827"
             BuildableName = "Filter Effects Moogy.app"
             BlueprintName = "FilterEffectsMoogy"
-            ReferencedContainer = "container:FilterEffectsMoogy.xcodeproj">
+            ReferencedContainer = "container:Filter Effects Moogy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

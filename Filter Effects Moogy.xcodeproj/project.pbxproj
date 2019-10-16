@@ -39,7 +39,7 @@
 		C4EDA10D1DA969CF008C1827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4EDA1201DA96F26008C1827 /* FilterEffects.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FilterEffects.entitlements; sourceTree = "<group>"; };
 		C4EDA1221DA96F26008C1827 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		C4EDA1251DA99F65008C1827 /* FilterEffects-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FilterEffects-BridgingHeader.h"; sourceTree = "<group>"; };
+		C4EDA1251DA99F65008C1827 /* FilterEffectsMoogy-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FilterEffectsMoogy-BridgingHeader.h"; sourceTree = "<group>"; };
 		C4EDA12A1DA9A3D7008C1827 /* Audiobus.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Audiobus.txt; sourceTree = "<group>"; };
 		CC61B7F5557A1A87795829BE /* Pods-FilterEffects.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilterEffects.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilterEffects/Pods-FilterEffects.release.xcconfig"; sourceTree = "<group>"; };
 		FF0589EB96D6BE37FC72BC5A /* Pods-FilterEffectsMoogy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilterEffectsMoogy.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilterEffectsMoogy/Pods-FilterEffectsMoogy.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 				13ED3DE1235658250073FD2A /* Audiobus.swift */,
 				13ED3DE323568D460073FD2A /* bassClipCR.wav */,
 				C4EDA1031DA969CF008C1827 /* ViewController.swift */,
-				C4EDA1251DA99F65008C1827 /* FilterEffects-BridgingHeader.h */,
+				C4EDA1251DA99F65008C1827 /* FilterEffectsMoogy-BridgingHeader.h */,
 				C4EDA1051DA969CF008C1827 /* Main.storyboard */,
 				C4EDA1081DA969CF008C1827 /* Assets.xcassets */,
 				C4EDA10A1DA969CF008C1827 /* LaunchScreen.storyboard */,
@@ -166,7 +166,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C4EDA0F91DA969CF008C1827 /* Build configuration list for PBXProject "FilterEffectsMoogy" */;
+			buildConfigurationList = C4EDA0F91DA969CF008C1827 /* Build configuration list for PBXProject "Filter Effects Moogy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -392,7 +392,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.glathocom.FilterEffectsMoogy;
 				PRODUCT_NAME = "Filter Effects Moogy";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FilterEffects/FilterEffects-BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jairrohmwells/Desktop/Swift Work/FilterEffectsMoogy/FilterEffects/FilterEffectsMoogy-BridgingHeader.h";
 				SWIFT_VERSION = 5.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
@@ -420,7 +420,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.glathocom.FilterEffectsMoogy;
 				PRODUCT_NAME = "Filter Effects Moogy";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FilterEffects/FilterEffects-BridgingHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jairrohmwells/Desktop/Swift Work/FilterEffectsMoogy/FilterEffects/FilterEffectsMoogy-BridgingHeader.h";
 				SWIFT_VERSION = 5.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
@@ -429,7 +429,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C4EDA0F91DA969CF008C1827 /* Build configuration list for PBXProject "FilterEffectsMoogy" */ = {
+		C4EDA0F91DA969CF008C1827 /* Build configuration list for PBXProject "Filter Effects Moogy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C4EDA10E1DA969CF008C1827 /* Debug */,
