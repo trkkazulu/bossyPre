@@ -6,9 +6,9 @@
 	<array>
 		<dict>
 			<key>manufacturer</key>
-			<string>AuKt</string>
+			<string>gtco</string>
 			<key>name</key>
-			<string>AudioKit: Filter Effects</string>
+			<string>AudioKit: Filter Effects Moogy</string>
 			<key>subtype</key>
 			<string>filx</string>
 			<key>type</key>
