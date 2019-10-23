@@ -19,23 +19,37 @@ class ViewController: UIViewController {
     var booster: AKBooster!
     var dist: AKDistortion!
     var distMixer: AKDryWetMixer!
-    var filter: AKMoogLadder!
+    //var filter: AKMoogLadder!
+    let filter = AKLowPassFilter()
     var filterMixer: AKDryWetMixer!
     var input = AKMicrophone()
+    var player: AKPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK: Create the player for testing
         
-        
+        if let file = try? AKAudioFile(readFileName: "bassClipCR.wav") {
+                  player = AKPlayer(audioFile: file)
+                  player.completionHandler = { Swift.print("completion callback has been triggered!") }
+                  
+        }
         //MARK: PROCESSES
         
-        filter = AKMoogLadder(input, cutoffFrequency: 630.0, resonance: 0.5)
-        filterMixer = AKDryWetMixer(input, filter)
+        //filter = AKMoogLadder(player, cutoffFrequency: 630.0, resonance: 0.5)
+        //filter = AKLowPassFilter(player, cutoffFrequency: 650.0, resonance: 0.5)
+        
+        filter.resonance = 0.5
+        
+        filterMixer = AKDryWetMixer(player, filter)
+        
         
         dist = AKDistortion(filterMixer, delay: 0.0, decay: 0.0, delayMix: 0.0, decimation: 0.0, rounding: 0.0, decimationMix: 0.0, linearTerm: 1.0, squaredTerm: 1.0, cubicTerm: 1.0, polynomialMix: 1.0, ringModFreq1: 0.0, ringModFreq2: 0.0, ringModBalance: 0.0, ringModMix: 0.0, softClipGain: -3.0, finalMix: 1.0)
         
         distMixer = AKDryWetMixer(filterMixer, dist)
+        
+        distMixer.balance = 0.5
         
         booster = AKBooster(distMixer)
         
@@ -51,6 +65,12 @@ class ViewController: UIViewController {
         } catch {
             AKLog("AudioKit did not start!")
         }
+        
+        player.isLooping = true
+        
+        player.buffering = .always
+        
+        player.play()
         
         Audiobus.start()
         
@@ -71,6 +91,7 @@ class ViewController: UIViewController {
         stackView.addArrangedSubview(AKSlider(
             property: "Filter Frequency",
             value: self.filter.cutoffFrequency,
+            range: 0 ... 650,
             format: "%0.2f hz") { sliderValue in
                 self.filter.cutoffFrequency = sliderValue
         })
@@ -86,6 +107,7 @@ class ViewController: UIViewController {
         stackView.addArrangedSubview(AKSlider(
             property: "Filter Mix",
             value: self.filterMixer.balance,
+            range: 0 ... 1.0,
             format: "%0.2f") { sliderValue in
                 self.filterMixer.balance = sliderValue
         })
@@ -101,6 +123,7 @@ class ViewController: UIViewController {
         stackView.addArrangedSubview(AKSlider(
             property: "Dist Mix",
             value: self.distMixer.balance,
+            range: 0 ... 1.0,
             format: "%0.2f") { sliderValue in
                 self.distMixer.balance = sliderValue
         })
@@ -108,7 +131,7 @@ class ViewController: UIViewController {
         stackView.addArrangedSubview(AKSlider(
             property: "Output Volume",
             value: self.booster.gain,
-            range: 0 ... 2,
+            range: 0 ... 1,
             format: "%0.2f") { sliderValue in
                 self.booster.gain = sliderValue
         })
