@@ -75,10 +75,6 @@ class ViewController: UIViewController {
         
         try! AudioKit.start()
         
-        
-        
-        // player.play()
-        
         setupUI()
     }
     
@@ -144,6 +140,11 @@ class ViewController: UIViewController {
         stackView.addArrangedSubview(AKButton(title: "Player Start"){ (button) in
             self.player.play()
         })
+        
+        
+              stackView.addArrangedSubview(AKButton(title: "Player Stop"){ (button) in
+                  self.player.stop()
+              })
         
         //MARK: Add Views
         
