@@ -23,8 +23,8 @@ class ViewController: UIViewController {
     // let filter = AKLowPassFilter()
     var filterMixer: AKDryWetMixer!
     var input = AKMicrophone()
-//    var player: AKPlayer!
-    var player: AKAudioPlayer!
+    var player: AKPlayer!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +32,10 @@ class ViewController: UIViewController {
         //MARK: Create the player for testing
         
         if let file = try? AKAudioFile(readFileName: "bassClipCR.wav") {
-            try! player = AKAudioPlayer(file: file)
+            player = AKPlayer(audioFile: file)
             player.completionHandler = { Swift.print("completion callback has been triggered!") }
             
-            player.looping = true
-
+            player.isLooping = true
             
         }
         
@@ -64,21 +63,21 @@ class ViewController: UIViewController {
         
         AudioKit.output = booster
         
-//        do {
-//            try AudioKit.start()
-//            print("AuddioKit started")
-//        } catch {
-//            AKLog("AudioKit did not start!")
-//        }
-//
+        //        do {
+        //            try AudioKit.start()
+        //            print("AuddioKit started")
+        //        } catch {
+        //            AKLog("AudioKit did not start!")
+        //        }
+        //
         
-         Audiobus.start()
+        Audiobus.start()
         
-         try! AudioKit.start()
+        try! AudioKit.start()
         
-       
         
-       // player.play()
+        
+        // player.play()
         
         setupUI()
     }
