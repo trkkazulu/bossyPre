@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         let filterPress = AKCompressor(filterBand7, threshold: 25, headRoom: 1.0, attackDuration: 0.10, releaseDuration: 0.5, masterGain: 3.5)
         
         
-        distMixer = AKDryWetMixer(filterPress, gruntPress, balance: 0.0)
+        distMixer = AKDryWetMixer(filterPress, gruntPress, balance: 0.5)
         
         //    //MARK: - Output
         //    /***************************************************************/

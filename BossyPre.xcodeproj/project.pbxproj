@@ -162,7 +162,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 13584DA9233E68AC00550E12 /* Build configuration list for PBXProject "Bossy Pre" */;
+			buildConfigurationList = 13584DA9233E68AC00550E12 /* Build configuration list for PBXProject "BossyPre" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -422,7 +422,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13584DA9233E68AC00550E12 /* Build configuration list for PBXProject "Bossy Pre" */ = {
+		13584DA9233E68AC00550E12 /* Build configuration list for PBXProject "BossyPre" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13584DC3233E68AD00550E12 /* Debug */,

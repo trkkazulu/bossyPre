@@ -17,7 +17,7 @@
                BlueprintIdentifier = "13584DAD233E68AC00550E12"
                BuildableName = "BossyPre.app"
                BlueprintName = "BossyPre"
-               ReferencedContainer = "container:Bossy Pre.xcodeproj">
+               ReferencedContainer = "container:BossyPre.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,7 +47,7 @@
             BlueprintIdentifier = "13584DAD233E68AC00550E12"
             BuildableName = "BossyPre.app"
             BlueprintName = "BossyPre"
-            ReferencedContainer = "container:Bossy Pre.xcodeproj">
+            ReferencedContainer = "container:BossyPre.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "13584DAD233E68AC00550E12"
             BuildableName = "BossyPre.app"
             BlueprintName = "BossyPre"
-            ReferencedContainer = "container:Bossy Pre.xcodeproj">
+            ReferencedContainer = "container:BossyPre.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
