@@ -4,7 +4,7 @@
 //
 //  Created by Aurelius Prochazka, revision history on Githbub.
 //  Copyright © 2018 AudioKit. All rights reserved.
-// It loops four times and crashes. Why? The crash has nothing to do with my interaction. Can i duplicate this problem with the microphone? I think it was doing this in AB also. The 
+// It loops four times and stops taking input. Why? The crash has nothing to do with my interaction. Can i duplicate this problem with the microphone? I think it was doing this in AB also.
 
 import AudioKit
 import AudioKitUI
@@ -19,11 +19,12 @@ class ViewController: UIViewController {
     var booster: AKBooster!
     var dist: AKDistortion!
     var distMixer: AKDryWetMixer!
-    //var filter: AKMoogLadder!
-    let filter = AKLowPassFilter()
+    var filter: AKMoogLadder!
+    // let filter = AKLowPassFilter()
     var filterMixer: AKDryWetMixer!
     var input = AKMicrophone()
-    var player: AKPlayer!
+//    var player: AKPlayer!
+    var player: AKAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,16 +32,20 @@ class ViewController: UIViewController {
         //MARK: Create the player for testing
         
         if let file = try? AKAudioFile(readFileName: "bassClipCR.wav") {
-                  player = AKPlayer(audioFile: file)
-                  player.completionHandler = { Swift.print("completion callback has been triggered!") }
-                  
+            try! player = AKAudioPlayer(file: file)
+            player.completionHandler = { Swift.print("completion callback has been triggered!") }
+            
+            player.looping = true
+
+            
         }
+        
+        
         //MARK: PROCESSES
         
-        //filter = AKMoogLadder(player, cutoffFrequency: 630.0, resonance: 0.5)
-        //filter = AKLowPassFilter(player, cutoffFrequency: 650.0, resonance: 0.5)
+        filter = AKMoogLadder(player, cutoffFrequency: 630.0, resonance: 0.5)
         
-        filter.resonance = 0.5
+        //filter.resonance = 0.5
         
         filterMixer = AKDryWetMixer(player, filter)
         
@@ -59,20 +64,21 @@ class ViewController: UIViewController {
         
         AudioKit.output = booster
         
-        do {
-            try AudioKit.start()
-            print("AuddioKit started")
-        } catch {
-            AKLog("AudioKit did not start!")
-        }
+//        do {
+//            try AudioKit.start()
+//            print("AuddioKit started")
+//        } catch {
+//            AKLog("AudioKit did not start!")
+//        }
+//
         
-        player.isLooping = true
+         Audiobus.start()
         
-        player.buffering = .always
+         try! AudioKit.start()
         
-        player.play()
+       
         
-        Audiobus.start()
+       // player.play()
         
         setupUI()
     }
@@ -91,7 +97,7 @@ class ViewController: UIViewController {
         stackView.addArrangedSubview(AKSlider(
             property: "Filter Frequency",
             value: self.filter.cutoffFrequency,
-            range: 0 ... 650,
+            range: 0 ... 630,
             format: "%0.2f hz") { sliderValue in
                 self.filter.cutoffFrequency = sliderValue
         })
@@ -134,6 +140,10 @@ class ViewController: UIViewController {
             range: 0 ... 1,
             format: "%0.2f") { sliderValue in
                 self.booster.gain = sliderValue
+        })
+        
+        stackView.addArrangedSubview(AKButton(title: "Player Start"){ (button) in
+            self.player.play()
         })
         
         //MARK: Add Views
