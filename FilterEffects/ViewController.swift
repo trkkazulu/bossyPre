@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     var distMixer: AKDryWetMixer!
     var filter: AKMoogLadder!
     var filterMixer: AKDryWetMixer!
-    var input: AKMicrophone!
+    var input = AKMicrophone()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +30,16 @@ class ViewController: UIViewController {
         
         //MARK: PROCESSES
         
-        filter = AKMoogLadder(input, cutoffFrequency: 500.0, resonance: 0.5)
+        filter = AKMoogLadder(input, cutoffFrequency: 630.0, resonance: 0.5)
         filterMixer = AKDryWetMixer(input, filter)
         
         dist = AKDistortion(filterMixer, delay: 0.0, decay: 0.0, delayMix: 0.0, decimation: 0.0, rounding: 0.0, decimationMix: 0.0, linearTerm: 1.0, squaredTerm: 1.0, cubicTerm: 1.0, polynomialMix: 1.0, ringModFreq1: 0.0, ringModFreq2: 0.0, ringModBalance: 0.0, ringModMix: 0.0, softClipGain: -3.0, finalMix: 1.0)
+        
         distMixer = AKDryWetMixer(filterMixer, dist)
         
         booster = AKBooster(distMixer)
+        
+        booster.start()
         
         booster.gain = 0.0
         
@@ -68,7 +71,7 @@ class ViewController: UIViewController {
         stackView.addArrangedSubview(AKSlider(
             property: "Filter Frequency",
             value: self.filter.cutoffFrequency,
-            format: "%0.2f s") { sliderValue in
+            format: "%0.2f hz") { sliderValue in
                 self.filter.cutoffFrequency = sliderValue
         })
         
