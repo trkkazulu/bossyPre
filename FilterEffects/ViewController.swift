@@ -4,7 +4,7 @@
 //
 //  Created by Aurelius Prochazka, revision history on Githbub.
 //  Copyright © 2018 AudioKit. All rights reserved.
-// It loops four times and stops taking input. Why? The crash has nothing to do with my interaction. Can i duplicate this problem with the microphone? I think it was doing this in AB also.
+// It loops four times and stops taking input. Why? The crash has nothing to do with my interaction. Can i duplicate this problem with the microphone? I think it was doing this in AB also. Fuck the custom Ui code. I'll redo this using a storyboard  
 
 import AudioKit
 import AudioKitUI
