@@ -29,6 +29,8 @@ class ViewController: UIViewController {
     var input = AKMicrophone()
     var player: AKPlayer!
     var startButton = AKButton()
+    var wha: AKAutoWah!
+    var whaMixer: AKDryWetMixer!
     
     
     override func viewDidLoad() {
@@ -51,18 +53,19 @@ class ViewController: UIViewController {
         //MARK: PROCESSES
         
         filter = AKMoogLadder(player, cutoffFrequency: 630.0, resonance: 0.5)
-
-
         filterMixer = AKDryWetMixer(player, filter)
 
+        wha = AKAutoWah(player, wah: 2.5, mix: 1.5, amplitude: 10.0)
+        whaMixer = AKDryWetMixer(filterMixer, wha)
+        whaMixer.balance = 0.5
         
-        dist = AKDistortion(filterMixer)
+        dist = AKDistortion(whaMixer)
         dist.linearTerm = 0.0
         dist.squaredTerm = 0.0
         dist.cubicTerm = 0.0
         dist.softClipGain = 3.0
         
-        distMixer = AKDryWetMixer(filterMixer, dist)
+        distMixer = AKDryWetMixer(whaMixer, dist)
         
         distMixer.balance = 0.5
         
