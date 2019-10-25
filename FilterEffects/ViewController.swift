@@ -1,10 +1,14 @@
 //
 //  ViewController.swift
-//  FilterEffects
+//  FilterEffectsMoogy
 //
-//  Created by Aurelius Prochazka, revision history on Githbub.
-//  Copyright © 2018 AudioKit. All rights reserved.
-// It loops four times and stops taking input. Why? The crash has nothing to do with my interaction. Can i duplicate this problem with the microphone? I think it was doing this in AB also. Fuck the custom Ui code. I'll redo this using a storyboard  
+/*
+ 
+ It appears that the problem has something to do with the distortion code. So i've fixed it by rewriting the dist. 
+ 
+ 
+ */
+
 
 import AudioKit
 import AudioKitUI
@@ -20,7 +24,6 @@ class ViewController: UIViewController {
     var dist: AKDistortion!
     var distMixer: AKDryWetMixer!
     var filter: AKMoogLadder!
-    // let filter = AKLowPassFilter()
     var filterMixer: AKDryWetMixer!
     var input = AKMicrophone()
     var player: AKPlayer!
@@ -32,8 +35,11 @@ class ViewController: UIViewController {
         //MARK: Create the player for testing
         
         if let file = try? AKAudioFile(readFileName: "bassClipCR.wav") {
+            
             player = AKPlayer(audioFile: file)
-            player.completionHandler = { Swift.print("completion callback has been triggered!") }
+            player.completionHandler = { Swift.print("completion callback has been triggered!")
+                
+            }
             
             player.isLooping = true
             
@@ -43,37 +49,37 @@ class ViewController: UIViewController {
         //MARK: PROCESSES
         
         filter = AKMoogLadder(player, cutoffFrequency: 630.0, resonance: 0.5)
-        
-        //filter.resonance = 0.5
-        
+
+
         filterMixer = AKDryWetMixer(player, filter)
+
         
+        dist = AKDistortion(filterMixer)
+        dist.linearTerm = 0.0
+        dist.squaredTerm = 0.7
+        dist.cubicTerm = 1.0
+        dist.softClipGain = 3.0
         
-        dist = AKDistortion(filterMixer, delay: 0.0, decay: 0.0, delayMix: 0.0, decimation: 0.0, rounding: 0.0, decimationMix: 0.0, linearTerm: 1.0, squaredTerm: 1.0, cubicTerm: 1.0, polynomialMix: 1.0, ringModFreq1: 0.0, ringModFreq2: 0.0, ringModBalance: 0.0, ringModMix: 0.0, softClipGain: -3.0, finalMix: 1.0)
-        
-        distMixer = AKDryWetMixer(filterMixer, dist)
+        distMixer = AKDryWetMixer(player, dist)
         
         distMixer.balance = 0.5
         
         booster = AKBooster(distMixer)
         
-        booster.start()
         
         booster.gain = 0.0
         
         AudioKit.output = booster
         
-        //        do {
-        //            try AudioKit.start()
-        //            print("AuddioKit started")
-        //        } catch {
-        //            AKLog("AudioKit did not start!")
-        //        }
-        //
+          do {
+                 try AudioKit.start()
+            
+             } catch {
+                
+                 AKLog("AudioKit did not start!")
+             }
         
         Audiobus.start()
-        
-        try! AudioKit.start()
         
         setupUI()
     }
@@ -96,7 +102,7 @@ class ViewController: UIViewController {
             format: "%0.2f hz") { sliderValue in
                 self.filter.cutoffFrequency = sliderValue
         })
-        
+
         stackView.addArrangedSubview(AKSlider(
             property: "Filter Resonance",
             value: self.filter.resonance,
@@ -104,7 +110,7 @@ class ViewController: UIViewController {
             format: "%0.2f") { sliderValue in
                 self.filter.resonance = sliderValue
         })
-        
+
         stackView.addArrangedSubview(AKSlider(
             property: "Filter Mix",
             value: self.filterMixer.balance,
@@ -116,7 +122,7 @@ class ViewController: UIViewController {
         stackView.addArrangedSubview(AKSlider(
             property: "Distortion",
             value: self.dist.softClipGain,
-            range: 0 ... 0.99,
+            range: -3 ... 10,
             format: "%0.2f") { sliderValue in
                 self.dist.softClipGain = sliderValue
         })
