@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     var filterMixer: AKDryWetMixer!
     var input = AKMicrophone()
     var player: AKPlayer!
+    var startButton = AKButton()
     
     
     override func viewDidLoad() {
@@ -80,7 +81,11 @@ class ViewController: UIViewController {
                  AKLog("AudioKit did not start!")
              }
         
+        //MARK: AB section
+        
         Audiobus.start()
+        
+        //MARK: GUI section calls GUI code
         
         setupUI()
     }
@@ -144,12 +149,17 @@ class ViewController: UIViewController {
                 self.booster.gain = sliderValue
         })
         
-        stackView.addArrangedSubview(AKButton(title: "Player Start"){ (button) in
+        stackView.addArrangedSubview(AKButton(title: "Player Start"){ (startButton) in
             self.player.play()
+            
+            if startButton.color != .green {
+                startButton.color = .green
+                startButton.textColor = .black
+            }
         })
-        
-        
-              stackView.addArrangedSubview(AKButton(title: "Player Stop"){ (button) in
+    
+              stackView.addArrangedSubview(AKButton(title: "Player Stop")
+              {(button) in
                   self.player.stop()
               })
         
