@@ -4,7 +4,8 @@
 //
 /*
  
- It appears that the problem has something to do with the distortion code. So i've fixed it by rewriting the dist. 
+ It appears that the problem has something to do with the distortion code. So i've fixed it by rewriting the dist. This works
+ now. Add the envelope filter. 
  
  
  */
@@ -56,11 +57,11 @@ class ViewController: UIViewController {
         
         dist = AKDistortion(filterMixer)
         dist.linearTerm = 0.0
-        dist.squaredTerm = 0.7
-        dist.cubicTerm = 1.0
+        dist.squaredTerm = 0.0
+        dist.cubicTerm = 0.0
         dist.softClipGain = 3.0
         
-        distMixer = AKDryWetMixer(player, dist)
+        distMixer = AKDryWetMixer(filterMixer, dist)
         
         distMixer.balance = 0.5
         
@@ -121,10 +122,10 @@ class ViewController: UIViewController {
         
         stackView.addArrangedSubview(AKSlider(
             property: "Distortion",
-            value: self.dist.softClipGain,
-            range: -3 ... 10,
+            value: self.dist.linearTerm,
+            range: 0 ... 1,
             format: "%0.2f") { sliderValue in
-                self.dist.softClipGain = sliderValue
+                self.dist.linearTerm = sliderValue
         })
         
         stackView.addArrangedSubview(AKSlider(
