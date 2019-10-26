@@ -373,6 +373,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BassPreAmp/BassPreAmp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = LJ45VYMT6A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -385,6 +386,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.glathocom.BossyPre;
 				PRODUCT_NAME = BossyPre;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jairrohmwells/Desktop/Swift Work/BossyPre/BassPreAmp/BossyPre-BridgingHeader.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
@@ -400,6 +402,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BassPreAmp/BassPreAmp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = LJ45VYMT6A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -412,6 +415,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.glathocom.BossyPre;
 				PRODUCT_NAME = BossyPre;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jairrohmwells/Desktop/Swift Work/BossyPre/BassPreAmp/BossyPre-BridgingHeader.h";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 5.0;

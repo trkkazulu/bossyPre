@@ -21,6 +21,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var resSlider: UISlider!
     @IBOutlet weak var cfSlider: UISlider!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var outputLabel: UILabel!
+    
+    @IBOutlet weak var dirtLabel: UILabel!
+    
+    @IBOutlet weak var gashLabel: UILabel!
+    
+    @IBOutlet weak var boomLabel: UILabel!
+    @IBOutlet weak var bumpLabel: UILabel!
+    
     var input = AKMicrophone()
     var loFilter: AKMoogLadder?
     var distMixer: AKDryWetMixer?
@@ -39,7 +49,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-                
+        
+        titleLabel.sizeToFit()
+        outputLabel.sizeToFit()
+        dirtLabel.sizeToFit()
+        gashLabel.sizeToFit()
+        bumpLabel.sizeToFit()
+        boomLabel.sizeToFit()
+        
         
         //    //MARK: - Eq settings
         //    /***************************************************************/
@@ -89,7 +106,7 @@ class ViewController: UIViewController {
     @IBAction func cfSliderMoved(_ sender: UISlider) {
         
         var loCutOffVal = filterBand2?.gain = Double(sender.value)
-        print("loCutoffVal \(sender.value)")
+       
     }
     
     @IBAction func resSliderMoved(_ sender: UISlider) {
@@ -97,18 +114,18 @@ class ViewController: UIViewController {
         let loResVal = filterBand3?.gain = Double(sender.value)
         filterBand4?.gain = Double(sender.value / 2)
         filterBand5?.gain = Double(sender.value / 8)
-        print(sender.value)
+      
     }
     
     @IBAction func outputVolChanged(_ sender: UISlider) {
         let boosterVal =  booster!.gain = Double(sender.value)
-        print("Output \(sender.value)")
+       
     }
     
     
     @IBAction func callousSliderMoved(_ sender: UISlider) {
         let distVal = distMixer!.balance = Double(sender.value / 8)
-        print("Callous \(sender.value)")
+        
     }
     
     
@@ -116,6 +133,6 @@ class ViewController: UIViewController {
     @IBAction func edgeSliderMoved(_ sender: UISlider) {
         var edgeVal = filterBand7?.gain = Double(sender.value * 4)
         filterBand6!.gain = Double(sender.value / 2)
-        print("Edge value \(edgeVal)")
+        
     }
 }
