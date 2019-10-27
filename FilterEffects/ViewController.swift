@@ -4,8 +4,7 @@
 //
 /*
  
- It appears that the problem has something to do with the distortion code. So i've fixed it by rewriting the dist. This works
- now.
+ It appears that the problem has something to do with the distortion code. So i've fixed it by rewriting the dist. This works now. Test this in the amp to see what tweaks need to be made so that it sounds good. 
  
  
  */
