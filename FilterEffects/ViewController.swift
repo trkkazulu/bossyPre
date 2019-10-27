@@ -55,9 +55,10 @@ class ViewController: UIViewController {
         //MARK: PROCESSES
         
         filter = AKMoogLadder(player, cutoffFrequency: 630.0, resonance: 0.5)
-        //filterMixer = AKDryWetMixer(player, filter)
+//        filterMixer = AKDryWetMixer(filter, filter)
+//        filterMixer.balance = 0.5
 
-        wha = AKAutoWah(player, wah: 2.5, mix: 1.0, amplitude: 10.0)
+        wha = AKAutoWah(filter, wah: 1.0, mix: 0.5, amplitude: 10.0)
         whaMixer = AKDryWetMixer(filter, wha)
         whaMixer.balance = 0.5
         
@@ -67,9 +68,10 @@ class ViewController: UIViewController {
 //        dist.cubicTerm = 0.0
 //        dist.softClipGain = 3.0
         
-        loOct = AKPitchShifter(whaMixer, shift: -12.0, windowSize: 0.5, crossfade: 1.0)
+        loOct = AKPitchShifter(whaMixer, shift: -12.0, windowSize: 1024, crossfade: 512)
         
         loOctMixer = AKDryWetMixer(whaMixer,loOct)
+        loOctMixer.balance = 0.0
         
 //        distMixer = AKDryWetMixer(whaMixer, dist)
 //
@@ -141,11 +143,11 @@ class ViewController: UIViewController {
 //            format: "%0.2f") { sliderValue in
 //                self.dist.linearTerm = sliderValue
 //        })
-//        
+//
         stackView.addArrangedSubview(AKSlider(
             property: "Lo Octav Mix",
             value: self.loOctMixer.balance,
-            range: 0 ... 1.0,
+            range: 0 ... 0.99,
             format: "%0.2f") { sliderValue in
                 self.loOctMixer.balance = sliderValue
         })
