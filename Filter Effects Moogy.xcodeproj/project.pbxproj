@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1335FD8C2363500500378304 /* bassClipCR.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1335FD8B2363500500378304 /* bassClipCR.wav */; };
+		13BC7CD32366373500A803D8 /* bassClipCR.wav in Resources */ = {isa = PBXBuildFile; fileRef = 13BC7CD22366373500A803D8 /* bassClipCR.wav */; };
 		13D9CBFC2331183F00B0A99D /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D9CBFA2331183E00B0A99D /* AudioKit.framework */; };
 		13D9CBFD2331183F00B0A99D /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D9CBFB2331183E00B0A99D /* AudioKitUI.framework */; };
 		13ED3DE2235658250073FD2A /* Audiobus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ED3DE1235658250073FD2A /* Audiobus.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		1335FD8B2363500500378304 /* bassClipCR.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bassClipCR.wav; sourceTree = "<group>"; };
+		13BC7CD22366373500A803D8 /* bassClipCR.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bassClipCR.wav; sourceTree = "<group>"; };
 		13D9CBFA2331183E00B0A99D /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 		13D9CBFB2331183E00B0A99D /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKitUI.framework; sourceTree = "<group>"; };
 		13ED3DE1235658250073FD2A /* Audiobus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audiobus.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				1335FD8B2363500500378304 /* bassClipCR.wav */,
+				13BC7CD22366373500A803D8 /* bassClipCR.wav */,
 				C4EDA12A1DA9A3D7008C1827 /* Audiobus.txt */,
 				C4EDA1201DA96F26008C1827 /* FilterEffects.entitlements */,
 				C4EDA1011DA969CF008C1827 /* AppDelegate.swift */,
@@ -196,6 +199,7 @@
 				C4EDA10C1DA969CF008C1827 /* LaunchScreen.storyboard in Resources */,
 				C4EDA1091DA969CF008C1827 /* Assets.xcassets in Resources */,
 				13ED3DE423568D460073FD2A /* bassClipCR.wav in Resources */,
+				13BC7CD32366373500A803D8 /* bassClipCR.wav in Resources */,
 				C4EDA12B1DA9A3D7008C1827 /* Audiobus.txt in Resources */,
 				C4EDA1071DA969CF008C1827 /* Main.storyboard in Resources */,
 			);

@@ -5,7 +5,7 @@
 /*
  
  It appears that the problem has something to do with the distortion code. So i've fixed it by rewriting the dist. This works
- now. Add the envelope filter. 
+ now.
  
  
  */
@@ -31,6 +31,8 @@ class ViewController: UIViewController {
     var startButton = AKButton()
     var wha: AKAutoWah!
     var whaMixer: AKDryWetMixer!
+    var loOct: AKPitchShifter!
+    var loOctMixer: AKDryWetMixer!
     
     
     override func viewDidLoad() {
@@ -53,23 +55,27 @@ class ViewController: UIViewController {
         //MARK: PROCESSES
         
         filter = AKMoogLadder(player, cutoffFrequency: 630.0, resonance: 0.5)
-        filterMixer = AKDryWetMixer(player, filter)
+        //filterMixer = AKDryWetMixer(player, filter)
 
-        wha = AKAutoWah(player, wah: 2.5, mix: 1.5, amplitude: 10.0)
-        whaMixer = AKDryWetMixer(filterMixer, wha)
+        wha = AKAutoWah(player, wah: 2.5, mix: 1.0, amplitude: 10.0)
+        whaMixer = AKDryWetMixer(filter, wha)
         whaMixer.balance = 0.5
         
-        dist = AKDistortion(whaMixer)
-        dist.linearTerm = 0.0
-        dist.squaredTerm = 0.0
-        dist.cubicTerm = 0.0
-        dist.softClipGain = 3.0
+//        dist = AKDistortion(whaMixer)
+//        dist.linearTerm = 1.0
+//        dist.squaredTerm = 0.0
+//        dist.cubicTerm = 0.0
+//        dist.softClipGain = 3.0
         
-        distMixer = AKDryWetMixer(whaMixer, dist)
+        loOct = AKPitchShifter(whaMixer, shift: -12.0, windowSize: 0.5, crossfade: 1.0)
         
-        distMixer.balance = 0.5
+        loOctMixer = AKDryWetMixer(whaMixer,loOct)
         
-        booster = AKBooster(distMixer)
+//        distMixer = AKDryWetMixer(whaMixer, dist)
+//
+//        distMixer.balance = 0.5
+        
+        booster = AKBooster(loOctMixer)
         
         
         booster.gain = 0.0
@@ -121,27 +127,27 @@ class ViewController: UIViewController {
         })
 
         stackView.addArrangedSubview(AKSlider(
-            property: "Filter Mix",
-            value: self.filterMixer.balance,
+            property: "Wha Mix",
+            value: self.whaMixer.balance,
             range: 0 ... 1.0,
             format: "%0.2f") { sliderValue in
-                self.filterMixer.balance = sliderValue
+                self.whaMixer.balance = sliderValue
         })
         
+//        stackView.addArrangedSubview(AKSlider(
+//            property: "Distortion",
+//            value: self.dist.linearTerm,
+//            range: 0 ... 1,
+//            format: "%0.2f") { sliderValue in
+//                self.dist.linearTerm = sliderValue
+//        })
+//        
         stackView.addArrangedSubview(AKSlider(
-            property: "Distortion",
-            value: self.dist.linearTerm,
-            range: 0 ... 1,
-            format: "%0.2f") { sliderValue in
-                self.dist.linearTerm = sliderValue
-        })
-        
-        stackView.addArrangedSubview(AKSlider(
-            property: "Dist Mix",
-            value: self.distMixer.balance,
+            property: "Lo Octav Mix",
+            value: self.loOctMixer.balance,
             range: 0 ... 1.0,
             format: "%0.2f") { sliderValue in
-                self.distMixer.balance = sliderValue
+                self.loOctMixer.balance = sliderValue
         })
         
         stackView.addArrangedSubview(AKSlider(
