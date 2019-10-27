@@ -4,7 +4,7 @@
 //
 /*
  
- It appears that the problem has something to do with the distortion code. So i've fixed it by rewriting the dist. This works now. Test this in the amp to see what tweaks need to be made so that it sounds good. 
+ It appears that the problem has something to do with the distortion code. So i've fixed it by rewriting the dist. This works now. Test this in the amp to see what tweaks need to be made so that it sounds good.
  
  
  */
@@ -34,26 +34,29 @@ class ViewController: UIViewController {
     var loOctMixer: AKDryWetMixer!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //MARK: Create the player for testing
         
-        if let file = try? AKAudioFile(readFileName: "bassClipCR.wav") {
-            
-            player = AKPlayer(audioFile: file)
-            player.completionHandler = { Swift.print("completion callback has been triggered!")
-                
-            }
-            
-            player.isLooping = true
-            
-        }
+//        if let file = try? AKAudioFile(readFileName: "bassClipCR.wav") {
+//
+//            player = AKPlayer(audioFile: file)
+//            player.completionHandler = { Swift.print("completion callback has been triggered!")
+//
+//            }
+//
+//            player.isLooping = true
+//
+//        }
+        
+    
         
         
         //MARK: PROCESSES
         
-        filter = AKMoogLadder(player, cutoffFrequency: 630.0, resonance: 0.5)
+        filter = AKMoogLadder(input, cutoffFrequency: 630.0, resonance: 0.5)
 //        filterMixer = AKDryWetMixer(filter, filter)
 //        filterMixer.balance = 0.5
 
