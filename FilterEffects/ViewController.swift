@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     var whaMixer: AKDryWetMixer!
     var loOct: AKPitchShifter!
     var loOctMixer: AKDryWetMixer!
-    
+    var envelope: AKAmplitudeEnvelope!
     
     
     override func viewDidLoad() {
@@ -40,29 +40,34 @@ class ViewController: UIViewController {
         
         //MARK: Create the player for testing
         
-//        if let file = try? AKAudioFile(readFileName: "bassClipCR.wav") {
-//
-//            player = AKPlayer(audioFile: file)
-//            player.completionHandler = { Swift.print("completion callback has been triggered!")
-//
-//            }
-//
-//            player.isLooping = true
-//
-//        }
+        if let file = try? AKAudioFile(readFileName: "bassClipCR.wav") {
+
+            player = AKPlayer(audioFile: file)
+            player.completionHandler = { Swift.print("completion callback has been triggered!")
+
+            }
+
+            player.isLooping = true
+
+        }
         
     
         
         
         //MARK: PROCESSES
         
-        filter = AKMoogLadder(input, cutoffFrequency: 630.0, resonance: 0.5)
-//        filterMixer = AKDryWetMixer(filter, filter)
-//        filterMixer.balance = 0.5
+        filter = AKMoogLadder(player, cutoffFrequency: 630.0, resonance: 0.5)
 
-        wha = AKAutoWah(filter, wah: 1.0, mix: 0.5, amplitude: 10.0)
-        whaMixer = AKDryWetMixer(filter, wha)
+        envelope = AKAmplitudeEnvelope(filter, attackDuration: 200.0, decayDuration: 100.0, sustainLevel: 100.6, releaseDuration: 75.0)
+        
+        whaMixer = AKDryWetMixer(filter,envelope)
+        
         whaMixer.balance = 0.5
+        
+
+//        wha = AKAutoWah(filter, wah: 1.0, mix: 0.5, amplitude: 10.0)
+//        whaMixer = AKDryWetMixer(filter, wha)
+//        whaMixer.balance = 0.5
         
 //        dist = AKDistortion(whaMixer)
 //        dist.linearTerm = 1.0
@@ -70,7 +75,7 @@ class ViewController: UIViewController {
 //        dist.cubicTerm = 0.0
 //        dist.softClipGain = 3.0
         
-        loOct = AKPitchShifter(whaMixer, shift: -12.0, windowSize: 1024, crossfade: 512)
+        loOct = AKPitchShifter(whaMixer, shift: -12.300, windowSize: 1024, crossfade: 512)
         
         loOctMixer = AKDryWetMixer(whaMixer,loOct)
         loOctMixer.balance = 0.0
@@ -157,22 +162,26 @@ class ViewController: UIViewController {
         stackView.addArrangedSubview(AKSlider(
             property: "Output Volume",
             value: self.booster.gain,
-            range: 0 ... 1,
+            range: 0 ... 10,
             format: "%0.2f") { sliderValue in
                 self.booster.gain = sliderValue
         })
         
         stackView.addArrangedSubview(AKButton(title: "Player Start"){ (startButton) in
+           
+            self.envelope.start()
             self.player.play()
             
-            if startButton.color != .green {
-                startButton.color = .green
-                startButton.textColor = .black
+            if startButton.color != .blue {
+                startButton.color = .blue
+                startButton.textColor = .white
             }
         })
     
               stackView.addArrangedSubview(AKButton(title: "Player Stop")
               {(button) in
+                
+                self.envelope.stop()
                   self.player.stop()
               })
         
