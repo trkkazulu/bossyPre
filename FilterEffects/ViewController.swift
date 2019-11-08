@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         
         //MARK: Create the player for testing
         
-        if let file = try? AKAudioFile(readFileName: "bassClipCR.wav") {
+        if let file = try? AKAudioFile(readFileName: "Bass2_short.wav") {
             
             player = AKPlayer(audioFile: file)
             player.completionHandler = { Swift.print("completion callback has been triggered!")
@@ -80,7 +80,6 @@ class ViewController: UIViewController {
                  AKLog("AudioKit did not start!")
              }
         
-        Audiobus.start()
         
         setupUI()
     }
