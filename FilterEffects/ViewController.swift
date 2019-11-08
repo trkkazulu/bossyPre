@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         
         //MARK: PROCESSES
         
-        filter = AKMoogLadder(player, cutoffFrequency: 630.0, resonance: 0.5)
+        filter = AKMoogLadder(player, cutoffFrequency: 20000.00, resonance: 0.5)
 
 
         filterMixer = AKDryWetMixer(player, filter)
